@@ -71,7 +71,6 @@ html {
 body {
     width: 960px;
     margin: 0 auto;
-    transition: height 1s linear;
 }
 
 header {
@@ -126,6 +125,10 @@ div.logo-container {
     -moz-transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), opacity 0.1s 0.15s linear;
     -ms-transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), opacity 0.1s 0.15s linear;
     -o-transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), opacity 0.1s 0.15s linear;
+}
+
+div.logo-image {
+     transition: all 1s linear;
 }
 
 div.logo-text {

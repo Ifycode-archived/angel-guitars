@@ -71,6 +71,7 @@ html {
 body {
     width: 960px;
     margin: 0 auto;
+    transition: height 1s linear;
 }
 
 header {

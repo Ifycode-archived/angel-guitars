@@ -108,6 +108,7 @@ section.hero {
     -moz-transform: translate(-50%, -54%);
     -ms-transform: translate(-50%, -54%);
     -o-transform: translate(-50%, -54%);
+    transition: all 1s linear;
 }
 
 div.container {
@@ -127,9 +128,6 @@ div.logo-container {
     -o-transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), opacity 0.1s 0.15s linear;
 }
 
-div.logo-image {
-     transition: all 1s linear;
-}
 
 div.logo-text {
     width: 20px;

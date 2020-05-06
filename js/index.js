@@ -121,7 +121,9 @@ function imagesize() {
     }
 }
 
-imagesize();
+window.onload = function() {
+     imagesize();
+}
     
   
 

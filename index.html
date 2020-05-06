@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Home | Angel Guitars</title>
+    </head>
+    <body>
+        
+        <!--===========================
+            opacity set to zero in css 
+            for showing change in reso-
+            lution on resize-->
+        <p id="displayPixels"></p>
+        <p id="displayPixelsWidth"></p>
+        <!--=========================-->
+
+        <!-- Header -->
+        <header class="opacity-1">
+            <a>Home</a>
+            <nav class="larger-device-nav">
+                <a>guitars</a>
+                <a>about</a>
+                <a>contact</a>
+            </nav>
+            <nav class="smaller-device-nav">
+                <img src="img/menu-icon.svg">
+                <!--
+                <a>Home</a>
+                <a>guitars</a>
+                <a>about</a>
+                <a>contact</a>
+                -->
+            </nav>
+        </header> 
+
+       <!-- Hero section -->
+        <section class="hero">
+            <div class="container">
+                <div class="logo-container translate-logo-container">
+                    <div class="logo-image">
+                        <img src="img/angel-guitar-logo.png">
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="angel translate-logotext-left">Angel</h1>
+                        <h1 class="guitars translate-logotext-right">Guitars</h1>
+                        <div class="welcome-to-page-border translate-welcome-down">
+                            <div class="welcome-to-page-content">
+                                Thanks for stopping by!
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </section>
+
+        <!-- Site Content section -->
+        <section id="sectionAfterLogo" class="border">
+            <div class="content">
+                <div class="text">
+                    <h1>Our monthly product showcase at our studios all over the world</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin lectus 
+                        orci, venenatis pharetra, egestas id, tincidunt vel, eros. Praesent aliquet,
+                        neque pretium congue mattis, ipsum augue dignissim ante, ac pretium nisl lectus 
+                        at magna. . . 
+                    </p>
+                    <button class="first-button"> Find out more </button>
+                </div>
+                <div class="img">
+                    <img src="img/white-guitar.png" class="sectionAfterLogo">
+                </div>
+            </div>
+        </section>
+        <section class="border">
+            <div class="content-alt">
+                <div class="text">
+                    <button class="second-button"> Sign Up! </button>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin lectus 
+                        orci, venenatis pharetra, egestas id, tincidunt vel, eros. Praesent aliquet,
+                        neque pretium congue mattis, ipsum augue dignissim ante, ac pretium nisl lectus 
+                        at magna.
+                    </p>
+                </div>
+                <div class="img">
+                    <img src="img/guitar-girl-1.png" class="sectionAfterLogo">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy;2020 Obiagba<span class="hide-footer-name"> Mary Ifeoma</span></p>
+            <div class="social-media">
+                <a>
+                    <img src="img/mail-icon.svg" class="mail-icon">
+                </a>
+                <a>
+                    <img src="img/twitter-logo.svg">
+                </a>
+                <a>
+                    <img src="img/instagram-icon.svg">
+                </a>
+            </div>
+        </footer>
+
+        <!-- Javascript -->    
+        <script src="js/index.js"></script>
+    </body>
+</html>

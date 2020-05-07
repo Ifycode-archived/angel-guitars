@@ -177,15 +177,15 @@ var footer = document.getElementsByTagName('footer')[0];
 
 function scrolling() {
     
-    var scrollTop100AndLess = document.body.scrollTop <= 15 || document.documentElement.scrollTop <= 15;
-        var scrollTop100To150 = ( document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
-                            && ( document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100);
-        var scrollTop150To200 = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
-                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150);
-        var scrollTop200AndAbove = (document.body.scrollTop > 150
-            || document.documentElement.scrollTop > 150)
-            && ( document.body.scrollTop <= 200
-                || document.documentElement.scrollTop <= 200);
+    var scrollTop100AndLess = document.body.scrollTop <= 8 || document.documentElement.scrollTop <= 8;
+        var scrollTop100To150 = ( document.body.scrollTop > 8 || document.documentElement.scrollTop > 8) 
+                            && ( document.body.scrollTop <= 20 || document.documentElement.scrollTop <= 20);
+        var scrollTop150To200 = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+                            && ( document.body.scrollTop <= 70 || document.documentElement.scrollTop <= 70);
+        var scrollTop200AndAbove = (document.body.scrollTop > 70
+            || document.documentElement.scrollTop > 70)
+            && ( document.body.scrollTop <= 170
+                || document.documentElement.scrollTop <= 170);
         var scrollTop1500andabove = document.body.scrollTop > 200
             || document.documentElement.scrollTop > 200;
 

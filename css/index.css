@@ -76,7 +76,7 @@ body {
 }
 
 header {
-    margin: 0 0 100px 10.2%;
+    margin: 0 0 300px 10.2%;
     font-family: 'Charmonman', cursive;
     font-size: 28px;
     font-weight: 600;
@@ -584,7 +584,7 @@ a {
     }
 
     header {
-        margin: 0 10.2% 100px 10.2%;
+        margin: 0 10.2% 300px 10.2%;
     }
 
     .larger-device-nav {

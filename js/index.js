@@ -99,7 +99,7 @@ function imagesize() {
         deviceSizes[i].addListener(respondToQuery);
     }
 
-
+    
     var heroHeight = logoImage.clientHeight;
     hero.style.height =  `${heroHeight}px`;
     var getHalfWithoutLogoImage = (document.documentElement.clientHeight - logoImage.clientHeight)/2;
@@ -122,10 +122,36 @@ function imagesize() {
 }
 
 window.onload = function() {
-     imagesize();
+    imagesize();
 }
-    
-  
+
+var smallerDeviceNav = document.getElementsByClassName('smaller-device-nav')[0];
+var dropDownMenu = document.getElementsByClassName('drop-down-menu')[0];
+var menuIcon = document.getElementsByClassName('menu-icon')[0];
+var toggleNav = 0;
+
+function toggleNavigation() {
+    toggleNav++;
+    if (toggleNav == 1) {
+        document.body.classList.add('overflow-hidden');
+        menuIcon.classList.add('scale-nav-down');
+        dropDownMenu.classList.remove('translate-menu-up');
+        dropDownMenu.classList.add('translate-menu-down');
+    }
+
+    if (toggleNav == 2) {
+        document.body.classList.remove('overflow-hidden');
+        menuIcon.classList.remove('scale-nav-down');
+        dropDownMenu.classList.remove('translate-menu-down');
+        dropDownMenu.classList.add('translate-menu-up');
+        toggleNav = 1;
+        toggleNav--;
+    }
+}
+
+menuIcon.onclick = function() {
+    toggleNavigation();
+}
 
 //----------------------------------------------------------
 var pixels = document.getElementById('displayPixels');
@@ -136,36 +162,34 @@ window.onresize = function() {
     pixels.innerText = document.documentElement.clientHeight + 'px';
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
+    
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------
 
 
-/*
+
 var logo = document.getElementsByClassName('logo-container')[0];
 var angel = document.getElementsByClassName('angel')[0];
 var guitars = document.getElementsByClassName('guitars')[0];
-
-var body = document.getElementsByTagName('body')[0];
 var welcome = document.getElementsByClassName('welcome-to-page-border')[0];
-*/
+var footer = document.getElementsByTagName('footer')[0];
 
-/*
-function scrolled() {
+function scrolling() {
     
     var scrollTop100AndLess = document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100;
         var scrollTop100To150 = ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
-                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150)
+                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150);
         var scrollTop150To200 = (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)
-                            && ( document.body.scrollTop <= 800 || document.documentElement.scrollTop <= 800)
+                            && ( document.body.scrollTop <= 800 || document.documentElement.scrollTop <= 800);
         var scrollTop200AndAbove = (document.body.scrollTop > 1300
             || document.documentElement.scrollTop > 1300)
             && ( document.body.scrollTop <= 1500
-                || document.documentElement.scrollTop <= 1500)
+                || document.documentElement.scrollTop <= 1500);
+        var scrollTop1500andabove = document.body.scrollTop > 1500
+            || document.documentElement.scrollTop > 1500;
 
         if (scrollTop100AndLess) { 
-       // body.classList.add('body-padding-increase');
-        //body.classList.remove('body-padding-decrease');
         header.classList.add('opacity-1');
         header.classList.remove('opacity-0');
         angel.classList.add('translate-logotext-left');
@@ -182,13 +206,11 @@ function scrolled() {
         angel.classList.remove('translate-logotext-in-left');
         guitars.classList.remove('translate-logotext-in-right');
         logo.classList.remove('translate-logo-container-down');
+        logo.classList.remove('scale-down');
 
-        header.classList.remove('header-margin-decrease');
     }
 
     if (scrollTop100To150) {
-        //body.classList.add('body-padding-decrease');
-        //body.classList.remove('body-padding-increase');
         header.classList.add('opacity-0');
         header.classList.remove('opacity-1');
         angel.classList.remove('translate-logotext-left');
@@ -205,8 +227,7 @@ function scrolled() {
         angel.classList.remove('translate-logotext-in-left');
         guitars.classList.remove('translate-logotext-in-right');
         logo.classList.remove('translate-logo-container-down');
-
-        header.classList.remove('header-margin-decrease');
+        logo.classList.remove('scale-down');
     }
 
     if (scrollTop150To200) {
@@ -222,10 +243,8 @@ function scrolled() {
         angel.classList.remove('translate-logotext-in-left');
         guitars.classList.remove('translate-logotext-in-right');
         logo.classList.remove('translate-logo-container-down');
-        
-       
-        header.classList.add('header-margin-increase');
-        header.classList.remove('header-margin-decrease');
+        logo.classList.remove('scale-down');
+ 
     }  
     
 
@@ -237,244 +256,35 @@ function scrolled() {
         welcome.classList.remove('translate-welcome-up');
         welcome.classList.add('translate-welcome-down');
         logo.classList.add('translate-logo-container-down');
-        
-        header.classList.add('header-margin-decrease');
-        header.classList.remove('header-margin-increase');
-    }
-}
-
-
-window.addEventListener('scroll', scrolled);
-
-
-function debounce(func, wait = 10, immediate = true) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        var later = function() {
-            timeout = null;
-            if(!immediate) func.apply(context, args);
-        }
-  
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    }
-  }
-
- // var pixels = document.getElementById('displayPixels');
-var sectionAfterLogos = document.querySelectorAll('.sectionAfterLogo');
-function scaleAndTransform(e) {
-  
-   sectionAfterLogos.forEach(sectionAfterLogo => {
-   var pointOfChange = (window.scrollY + window.innerHeight)/2 - sectionAfterLogo.height/2;
-    var sectionAfterLogoBottom = sectionAfterLogo.offsetTop/2.1 + sectionAfterLogo.height;
-    var isHalfShown = pointOfChange < sectionAfterLogo.offsetTop;
-    var isNotScrolledPast =  window.scrollY > sectionAfterLogoBottom;
-    //pixels.innerHTML = sectionAfterLogo.offsetTop;
-    if (isHalfShown && isNotScrolledPast) {
-        logo.classList.add('scale-down');
-        logo.classList.remove('scale-up');
-        //sectionAfterLogo.classList.add('blue');
-        //sectionAfterLogo.classList.remove('red'); 
-    }
-    else {
-       // sectionAfterLogo.classList.add('red');
-        //sectionAfterLogo.classList.remove('blue');
-        logo.classList.add('scale-up');
         logo.classList.remove('scale-down');
     }
-  });
-}
-window.addEventListener('scroll', debounce(scaleAndTransform));
 
-*/
-
+    if ( scrollTop1500andabove ) {
+        logo.classList.add('scale-down');
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*
-    var documentHeight = document.documentElement.clientHeight*0.6;
-    var documentWidth = documentHeight*0.84;
-
-    var documentHeight2 = document.documentElement.clientHeight*0.3;
-    var documentWidth2 = documentHeight2*1.26;
-
-    var documentHeight3 = document.documentElement.clientHeight*0.2;
-    var documentWidth3 = documentHeight3*1.68;
+    var documentHeight = window.pageYOffset + window.innerHeight;
+    var bodyScrollHeight = document.body.scrollHeight;
+    var icon = document.getElementsByClassName('icon');
+    function detectBodyBottom() {
+        if (documentHeight >= bodyScrollHeight) {
+            icon[i].classList.remove('scale-icons-down');
+        }
     
-    
-    var deviceSizes = [
-        
-        window.matchMedia( "(max-height: 1354px)" ),
-        window.matchMedia( "(max-height: 1005px)" )
-    ]
-
-    function respondToQuery() {
-        if (!deviceSizes[0].matches && !deviceSizes[1].matches) {
-            logoImage.style.width =  `${documentWidth3}px`;
-            container.style.width =  `${documentWidth3}px`;
+        else {
+            icon[i].classList.add('scale-icons-down');
         }
-
-        if (deviceSizes[0].matches) {
-            logoImage.style.width =  `${documentWidth2}px`;
-            container.style.width =  `${documentWidth2}px`;
-            
-        }
-
-        if (deviceSizes[1].matches) {
-            logoImage.style.width =  `${documentWidth}px`;
-            container.style.width =  `${documentWidth}px`;
-        }
-
-       
     }
 
-    for (var i=0; i<deviceSizes.length; i++) {
-        respondToQuery(deviceSizes[i]);
-        deviceSizes[i].addListener(respondToQuery);
+    for(i=0; i<icon.length; i++) {
+        detectBodyBottom();
     }
-*/
-
-
-
-/*
-
-function scrolled() {
-    if ( document.body.scrollTop <= 100
-        || document.documentElement.scrollTop <= 100) { 
-        header.classList.add('opacity-1');
-        header.classList.remove('opacity-0');
-        angel.classList.add('translate-logotext-left');
-        guitars.classList.add('translate-logotext-right');
-        angel.classList.remove('translate-logotext-farther-left');
-        guitars.classList.remove('translate-logotext-farther-right');
-    }
-
-    if (( document.body.scrollTop > 100
-        || document.documentElement.scrollTop > 100) 
-        && ( document.body.scrollTop <= 150
-            || document.documentElement.scrollTop <= 150) ) {
-        header.classList.add('opacity-0');
-        header.classList.remove('opacity-1');
-        angel.classList.remove('translate-logotext-left');
-        guitars.classList.remove('translate-logotext-right');
-        angel.classList.add('translate-logotext-farther-left');
-        guitars.classList.add('translate-logotext-farther-right');
-        angel.classList.remove('translate-logotext-down-left');
-        guitars.classList.remove('translate-logotext-down-right');
-
-
-    }
-
-    if ( (document.body.scrollTop > 150
-        || document.documentElement.scrollTop > 150)
-        && ( document.body.scrollTop <= 200
-            || document.documentElement.scrollTop <= 200) ) {
-        angel.classList.remove('translate-logotext-farther-left');
-        guitars.classList.remove('translate-logotext-father-right');
-        angel.classList.add('translate-logotext-down-left');
-        guitars.classList.add('translate-logotext-down-right');
-    }  
 }
 
-*/
-//window.addEventListener('scroll', scrolled);
+window.addEventListener('scroll', scrolling);
 
 
 
-
-
-/*
-var t;
-
-    
-    t = setTimeout(timeout, 50);
-    function timeout() {
-        window.onscroll = function() {
-            clearTimeout(t);
-            scrolled();
-        }
-    }
-*/
-
-
-/*
-pixels.innerText = `${documentWidth}px`;
-window.onresize = function() {
-    pixels.innerText = `${documentWidth}px`;
-}
-
-window.addEventListener('resize', onresize);
-*/
-//function scrolled() {
-    
-    
-
-    //function scrolled() {
-        /*
-        var scrollTop100AndLess = document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100;
-        var scrollTop100To150 = ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
-                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150)
-        var scrollTop150To200 = (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)
-                            && ( document.body.scrollTop <= 200 || document.documentElement.scrollTop <= 200)
-    
-    var scrollTop = [scrollTop100AndLess,
-                     scrollTop100To150,
-                     scrollTop150To200]
-        
-
-       function respondToScrollPosition(i) {
-        var scrollTop = [document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100,
-            scrollTop100To150,
-            scrollTop150To200]
-
-        if (scrollTop[0]) {
-            body.style.background = 'pink';
-        }
-
-
-       }
-
-       for (var i=0; i<scrollTop.length; i++) {
-         respondToScrollPosition(i);
-        
-       }
-
-       window.addEventListener('scroll', respondToScrollPosition);
-
-      
-      
-    //}
-
-//window.addEventListener('scroll', scrolled);
-*/
+ 
+ 

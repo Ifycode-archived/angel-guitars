@@ -177,7 +177,7 @@ var footer = document.getElementsByTagName('footer')[0];
 
 function scrolling() {
     
-    var scrollTop100AndLess = document.body.scrollTop <= 50 || document.documentElement.scrollTop <= 50;
+    var scrollTop100AndLess = document.body.scrollTop <= 15 || document.documentElement.scrollTop <= 15;
         var scrollTop100To150 = ( document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
                             && ( document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100);
         var scrollTop150To200 = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)

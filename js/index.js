@@ -186,8 +186,8 @@ function scrolling() {
             || document.documentElement.scrollTop > 70)
             && ( document.body.scrollTop <= 170
                 || document.documentElement.scrollTop <= 170);
-        var scrollTop1500andabove = document.body.scrollTop > 200
-            || document.documentElement.scrollTop > 200;
+        var scrollTop1500andabove = document.body.scrollTop > 170
+            || document.documentElement.scrollTop > 170;
 
         if (scrollTop100AndLess) { 
         header.classList.add('opacity-1');

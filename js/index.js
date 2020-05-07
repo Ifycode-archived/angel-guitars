@@ -50,7 +50,7 @@ function imagesize() {
         if (!deviceSizes[0].matches && !deviceSizes[1].matches && !deviceSizes[2].matches && !deviceSizes[3].matches && !deviceSizes[4].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
-            if (document.documentElement.clientHeight <= 800) {
+            if (document.documentElement.clientHeight <= 900) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth}px`;
             }      
@@ -59,7 +59,7 @@ function imagesize() {
         if (deviceSizes[0].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
-            if (document.documentElement.clientHeight <= 800) {
+            if (document.documentElement.clientHeight <= 900) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
             }
@@ -68,7 +68,7 @@ function imagesize() {
         if (deviceSizes[1].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
-            if (document.documentElement.clientHeight <= 800) {
+            if (document.documentElement.clientHeight <= 900) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth5}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth5}px`;
             }
@@ -77,7 +77,7 @@ function imagesize() {
         if (deviceSizes[2].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth7}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth7}px`;
-            if (document.documentElement.clientHeight <= 800) {
+            if (document.documentElement.clientHeight <= 900) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth8}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth8}px`;
             } 

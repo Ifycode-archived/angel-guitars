@@ -181,13 +181,13 @@ function scrolling() {
         var scrollTop100To150 = ( document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
                             && ( document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100);
         var scrollTop150To200 = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
-                            && ( document.body.scrollTop <= 300 || document.documentElement.scrollTop <= 300);
-        var scrollTop200AndAbove = (document.body.scrollTop > 300
-            || document.documentElement.scrollTop > 300)
-            && ( document.body.scrollTop <= 500
-                || document.documentElement.scrollTop <= 500);
-        var scrollTop1500andabove = document.body.scrollTop > 500
-            || document.documentElement.scrollTop > 500;
+                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150);
+        var scrollTop200AndAbove = (document.body.scrollTop > 150
+            || document.documentElement.scrollTop > 150)
+            && ( document.body.scrollTop <= 200
+                || document.documentElement.scrollTop <= 200);
+        var scrollTop1500andabove = document.body.scrollTop > 200
+            || document.documentElement.scrollTop > 200;
 
         if (scrollTop100AndLess) { 
         header.classList.add('opacity-1');

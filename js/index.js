@@ -177,17 +177,17 @@ var footer = document.getElementsByTagName('footer')[0];
 
 function scrolling() {
     
-    var scrollTop100AndLess = document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100;
-        var scrollTop100To150 = ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
-                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150);
-        var scrollTop150To200 = (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)
-                            && ( document.body.scrollTop <= 800 || document.documentElement.scrollTop <= 800);
-        var scrollTop200AndAbove = (document.body.scrollTop > 1300
-            || document.documentElement.scrollTop > 1300)
-            && ( document.body.scrollTop <= 1500
-                || document.documentElement.scrollTop <= 1500);
-        var scrollTop1500andabove = document.body.scrollTop > 1500
-            || document.documentElement.scrollTop > 1500;
+    var scrollTop100AndLess = document.body.scrollTop <= 50 || document.documentElement.scrollTop <= 50;
+        var scrollTop100To150 = ( document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) 
+                            && ( document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100);
+        var scrollTop150To200 = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
+                            && ( document.body.scrollTop <= 300 || document.documentElement.scrollTop <= 300);
+        var scrollTop200AndAbove = (document.body.scrollTop > 300
+            || document.documentElement.scrollTop > 300)
+            && ( document.body.scrollTop <= 500
+                || document.documentElement.scrollTop <= 500);
+        var scrollTop1500andabove = document.body.scrollTop > 500
+            || document.documentElement.scrollTop > 500;
 
         if (scrollTop100AndLess) { 
         header.classList.add('opacity-1');

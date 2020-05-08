@@ -162,9 +162,11 @@ window.onresize = function() {
     pixels.innerText = document.documentElement.clientHeight + 'px';
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
+    document.body.style.transition = 'padding 1s linear';
     hero.style.transition = 'transform 1s linear';
     logoImage.style.transition = 'width 1s linear';
     container.style.transition = 'width 1s linear';
+
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------

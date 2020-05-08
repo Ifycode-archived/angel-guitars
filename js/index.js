@@ -163,6 +163,8 @@ window.onresize = function() {
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
     hero.style.transition = 'transform 1s linear';
+    logoImage.style.transition = 'width 1s linear';
+    container.style.transition = 'width 1s linear';
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------

@@ -73,7 +73,7 @@ html {
 body {
     width: 960px;
     margin: 0 auto;
-    background: grey;
+
 }
 
 header {
@@ -112,7 +112,7 @@ nav a{
 
 section.hero {
     z-index: 0;
-    position: fixed;
+    position: sticky;
     left: 50%;
     top: 50%;
     font-family: 'Charmonman', cursive;

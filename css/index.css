@@ -67,13 +67,14 @@ html, body {
 
 html {
     background: linear-gradient(to right, rgb(227, 203, 248) 60%, var(--brown) 60%);
-    transition: height 1s linear;
-    background: pink;
+    
+    background: white;
 }
 
 body {
     width: 960px;
     margin: 0 auto;
+    transition: height 1s linear;
 }
 
 header {

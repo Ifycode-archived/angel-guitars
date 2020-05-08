@@ -66,7 +66,7 @@ html, body {
 }
 
 html {
-   scroll-behavior: smooth;
+    scroll-behavior: smooth;
     background: linear-gradient(to right, rgb(227, 203, 248) 60%, var(--brown) 60%);
 }
 
@@ -76,6 +76,7 @@ body {
 }
 
 header {
+    background: blue;
     margin: 0 0 1100px 10.2%;
     font-family: 'Charmonman', cursive;
     font-size: 28px;
@@ -121,6 +122,7 @@ section.hero {
     font-family: 'Charmonman', cursive;
     font-size: 18px;
     font-weight: 600;
+    overscroll-behaviour: contain;
     transform: translate(-50%, -54%);
     -webkit-transform: translate(-50%, -54%);
     -moz-transform: translate(-50%, -54%);

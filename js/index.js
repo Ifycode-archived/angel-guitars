@@ -162,7 +162,7 @@ window.onresize = function() {
     pixels.innerText = document.documentElement.clientHeight + 'px';
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
-    
+    hero.style.transition = 'transform 1s linear';
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------

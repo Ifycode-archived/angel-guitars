@@ -64,11 +64,12 @@ img {
 html, body {
     height: 100vh;
     background: linear-gradient(to right, var(--purple) 50%, var(--brown) 50%);
+    transition: height 1s linear;
 }
 
 html {
     background: linear-gradient(to right, rgb(227, 203, 248) 60%, var(--brown) 60%);
-    background: skyblue;
+    background: lightgreen;
 }
 
 body {

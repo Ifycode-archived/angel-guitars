@@ -50,7 +50,7 @@ function imagesize() {
         if (!deviceSizes[0].matches && !deviceSizes[1].matches && !deviceSizes[2].matches && !deviceSizes[3].matches && !deviceSizes[4].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
-            if (document.documentElement.clientHeight <= 900) {
+            if (document.documentElement.clientHeight <= 800) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth}px`;
             }      
@@ -59,7 +59,7 @@ function imagesize() {
         if (deviceSizes[0].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
-            if (document.documentElement.clientHeight <= 900) {
+            if (document.documentElement.clientHeight <= 800) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth6}px`;
             }
@@ -68,7 +68,7 @@ function imagesize() {
         if (deviceSizes[1].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth4}px`;
-            if (document.documentElement.clientHeight <= 900) {
+            if (document.documentElement.clientHeight <= 800) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth5}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth5}px`;
             }
@@ -77,7 +77,7 @@ function imagesize() {
         if (deviceSizes[2].matches) {
             logoImage.style.width =  `${maintainAspectRatioAtAnyWidth7}px`;
             container.style.width =  `${maintainAspectRatioAtAnyWidth7}px`;
-            if (document.documentElement.clientHeight <= 900) {
+            if (document.documentElement.clientHeight <= 800) {
                 logoImage.style.width =  `${maintainAspectRatioAtAnyWidth8}px`;
                 container.style.width =  `${maintainAspectRatioAtAnyWidth8}px`;
             } 
@@ -162,12 +162,7 @@ window.onresize = function() {
     pixels.innerText = document.documentElement.clientHeight + 'px';
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
-    document.documentElement.style.transition = 'height 1s linear';
-    document.body.style.transition = 'padding 1s linear';
-    hero.style.transition = 'transform 1s linear';
-    logoImage.style.transition = 'width 1s linear';
-    container.style.transition = 'width 1s linear';
-
+    
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------
@@ -182,17 +177,17 @@ var footer = document.getElementsByTagName('footer')[0];
 
 function scrolling() {
     
-    var scrollTop100AndLess = document.body.scrollTop <= 15 || document.documentElement.scrollTop <= 15;
-        var scrollTop100To150 = ( document.body.scrollTop > 15 || document.documentElement.scrollTop > 15) 
-                            && ( document.body.scrollTop <= 20 || document.documentElement.scrollTop <= 20);
-        var scrollTop150To200 = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
-                            && ( document.body.scrollTop <= 220 || document.documentElement.scrollTop <= 220);
-        var scrollTop200AndAbove = (document.body.scrollTop > 220
-            || document.documentElement.scrollTop > 220)
-            && ( document.body.scrollTop <= 270
-                || document.documentElement.scrollTop <= 270);
-        var scrollTop1500andabove = document.body.scrollTop > 270
-            || document.documentElement.scrollTop > 270;
+    var scrollTop100AndLess = document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100;
+        var scrollTop100To150 = ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150);
+        var scrollTop150To200 = (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)
+                            && ( document.body.scrollTop <= 450 || document.documentElement.scrollTop <= 450);
+        var scrollTop200AndAbove = (document.body.scrollTop > 650
+            || document.documentElement.scrollTop > 650)
+            && ( document.body.scrollTop <= 750
+                || document.documentElement.scrollTop <= 750);
+        var scrollTop1500andabove = document.body.scrollTop > 750
+            || document.documentElement.scrollTop > 750;
 
         if (scrollTop100AndLess) { 
         header.classList.add('opacity-1');
@@ -292,4 +287,18 @@ window.addEventListener('scroll', scrolling);
 
 
  
+ /*
+ var scrollTop100AndLess = document.body.scrollTop <= 100 || document.documentElement.scrollTop <= 100;
+        var scrollTop100To150 = ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+                            && ( document.body.scrollTop <= 150 || document.documentElement.scrollTop <= 150);
+        var scrollTop150To200 = (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)
+                            && ( document.body.scrollTop <= 800 || document.documentElement.scrollTop <= 800);
+        var scrollTop200AndAbove = (document.body.scrollTop > 1300
+            || document.documentElement.scrollTop > 1300)
+            && ( document.body.scrollTop <= 1500
+                || document.documentElement.scrollTop <= 1500);
+        var scrollTop1500andabove = document.body.scrollTop > 1500
+            || document.documentElement.scrollTop > 1500;
  
+ header's margin bottom was 1800px
+ */

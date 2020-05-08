@@ -66,7 +66,6 @@ html, body {
 }
 
 html {
-    scroll-behavior: smooth;
     background: linear-gradient(to right, rgb(227, 203, 248) 60%, var(--brown) 60%);
 }
 

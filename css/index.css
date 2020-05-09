@@ -127,6 +127,8 @@ section.hero {
     -moz-transform: translate(-50%, -54%);
     -ms-transform: translate(-50%, -54%);
     -o-transform: translate(-50%, -54%);
+    transition: transform 1s linear;
+    background: grey;
    
 }
 

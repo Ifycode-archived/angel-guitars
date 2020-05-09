@@ -126,10 +126,7 @@ section.hero {
     -webkit-transform: translate(-50%, -54%);
     -moz-transform: translate(-50%, -54%);
     -ms-transform: translate(-50%, -54%);
-    -o-transform: translate(-50%, -54%);
-    transition: transform 1s linear;
-    background: grey;
-   
+    -o-transform: translate(-50%, -54%);  
 }
 
 div.container {

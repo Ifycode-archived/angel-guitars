@@ -162,8 +162,6 @@ window.onresize = function() {
     pixels.innerText = document.documentElement.clientHeight + 'px';
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
-    hero.style.height = `${heroHeight+60}px`;
-    
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------

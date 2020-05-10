@@ -102,7 +102,7 @@ function imagesize() {
     
     var heroHeight = logoImage.clientHeight;
     hero.style.height =  `${heroHeight}px`;
-    var getHalfWithoutLogoImage = (document.documentElement.clientHeight - logoImage.clientHeight)/2;
+    var getHalfWithoutLogoImage = (document.documentElement.clientHeight - heroHeight)/2;
     var remove = header.clientHeight * 0.7;
     var result = (getHalfWithoutLogoImage - remove);
     document.body.style.padding = `${result}px 0 95px 0`;
@@ -162,6 +162,7 @@ window.onresize = function() {
     pixels.innerText = document.documentElement.clientHeight + 'px';
     pixelsWidth.innerText = document.documentElement.clientWidth + 'px';
     imagesize();
+    
 }
 window.addEventListener('resize', onresize);
 //--------------------------------------------------------
